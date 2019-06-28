@@ -1,4 +1,5 @@
 import textwrap
+import binascii
 
 #BASE64 Dictionary
 base64_dict = {"0":"A", "1":"B", "2":"C", "3":"D", "4":"E", "5":"F", "6":"G", "7":"H", "8":"I", "9":"J", "10":"K", "11":"L", "12":"M", "13":"N", "14":"O", "15":"P", "16":"Q", "17":"R", "18":"S", "19":"T", "20":"U", "21":"V", "22":"W", "23":"X", "24":"Y", "25":"Z",
@@ -53,12 +54,13 @@ def base64_decode_string(encoded_input):
         last_element = temp[len(temp)-1]
         if((len(last_element)) < 8):
             temp.remove(last_element)
-        else:
-            continue
-            temp[j] = int(temp[j],2)
-            print(temp[j])
+    
+    for j in range(0,len(temp)):
+        temp[j] = chr(int(temp[j],2))
 
-    print(temp)
+    decoded_string = ''.join(temp)
+    print("The base64 decoding of the string is:",decoded_string)
+    return decoded_string
 
-encoded = base64_encode_string("Hello")
+encoded = base64_encode_string("gbvunzdjkgnjfdgnskjgnfwetiohgrn  gfdlgkdfgdfjlk")
 base64_decode_string(encoded)
