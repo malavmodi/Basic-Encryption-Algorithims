@@ -34,7 +34,7 @@ def base64_encode_string(test_input):
         temp.append("=")
     
     binary_string = ''.join(temp)
-    print("The base64 encoding of the string",test_input, "is",binary_string)
+    print("The base64 encoding of the string","'"+test_input+"'", "is","'"+binary_string+"'")
     return binary_string
     
 def base64_decode_string(encoded_input):
@@ -59,7 +59,7 @@ def base64_decode_string(encoded_input):
         temp[j] = chr(int(temp[j],2))
 
     decoded_string = ''.join(temp)
-    print("The base64 decoding of the string is:",decoded_string)
+    print("The base64 decoding of the string is:","'"+decoded_string+"'")
     return decoded_string
 
 encoded = base64_encode_string("gbvunzdjkgnjfdgnskjgnfwetiohgrn  gfdlgkdfgdfjlk")
